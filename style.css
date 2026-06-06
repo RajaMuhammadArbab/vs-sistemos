@@ -1766,8 +1766,6 @@ a { text-decoration: none; }
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  overflow: hidden; /* Prevent cards from bleeding out of the screen */
-  padding: 20px 0; /* Add padding to prevent box-shadow clipping */
 }
 
 /* Arrows */
@@ -1791,9 +1789,9 @@ a { text-decoration: none; }
 .products-grid {
   display: flex;
   gap: 24px;
-  width: calc(100% + 40px);
-  margin: -20px;
-  padding: 20px;
+  width: calc(100% + 64px);
+  margin: -32px;
+  padding: 32px;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -2010,9 +2008,9 @@ a { text-decoration: none; }
 .reviews-grid {
   display: flex;
   gap: 24px;
-  width: calc(100% + 40px);
-  margin: -20px;
-  padding: 20px;
+  width: calc(100% + 64px);
+  margin: -32px;
+  padding: 32px;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -2194,9 +2192,9 @@ a { text-decoration: none; }
 .blog-grid {
   display: flex;
   gap: 24px;
-  width: calc(100% + 40px);
-  margin: -20px;
-  padding: 20px;
+  width: calc(100% + 64px);
+  margin: -32px;
+  padding: 32px;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
