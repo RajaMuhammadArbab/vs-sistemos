@@ -107,17 +107,23 @@ document.addEventListener('DOMContentLoaded', () => {
     closeDropdown();
   });
 
-  function doSearch() {
-    const q = searchInput?.value.trim();
+  function doSearch(inputEl) {
+    const q = inputEl?.value.trim();
     if (!q) return;
     const li = document.createElement('li');
     li.className = 'search-history-item';
     li.innerHTML = `<i class="fa-regular fa-clock search-history-icon"></i><span class="search-history-text">${q}</span><button class="search-remove-btn">×</button>`;
     searchHistoryList?.prepend(li);
     closeDropdown();
+    inputEl.value = ''; // clear after search
   }
-  searchBtn?.addEventListener('click', doSearch);
-  searchInput?.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(); });
+  searchBtn?.addEventListener('click', () => doSearch(searchInput));
+  searchInput?.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(searchInput); });
+
+  const mobileSearchBtn = document.getElementById('mobileSearchBtn');
+  const mobileSearchInput = document.getElementById('mobileSearchInput');
+  mobileSearchBtn?.addEventListener('click', () => { doSearch(mobileSearchInput); closeDrawer(); });
+  mobileSearchInput?.addEventListener('keydown', e => { if (e.key === 'Enter') { doSearch(mobileSearchInput); closeDrawer(); } });
 
   /* ══════════════════════════════════════════════════
      PAGE OVERLAY HELPERS
