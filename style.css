@@ -569,7 +569,7 @@ a { text-decoration: none; }
    BREAKPOINT: TABLET — 1024px
    ============================================================ */
 @media (max-width: 1024px) {
-  .top-badges { display: none; }
+  .top-badges { flex-wrap: wrap; justify-content: center; }
   .top-bar  { padding: 6px 20px; }
   .bottom-bar { padding: 12px 20px; }
 }
