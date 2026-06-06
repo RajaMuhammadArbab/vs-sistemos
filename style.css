@@ -2698,9 +2698,11 @@ a { text-decoration: none; }
   .products-grid, .reviews-grid, .blog-grid {
     flex-direction: column !important;
     width: 100% !important;
+    margin: 0 !important; /* Reset desktop negative margin */
     gap: 24px;
-    padding: 0;
+    padding: 24px 16px !important; /* Provide padding for shadows on mobile */
     align-items: center;
+    overflow: visible !important;
   }
 
   /* Card sizes on mobile - full width */
