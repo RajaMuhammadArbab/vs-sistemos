@@ -578,59 +578,65 @@ a { text-decoration: none; }
    BREAKPOINT: TABLET SMALL — 768px
    ============================================================ */
 @media (max-width: 768px) {
+  /* Top bar — show but compact */
   .top-bar { display: block; padding: 4px 12px; }
-  .top-bar-inner { height: auto; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
-  .bottom-bar { padding: 10px 16px; }
-  .bottom-bar-inner { 
-    height: auto; 
-    flex-wrap: wrap; 
-    gap: 12px; 
+  .top-bar-inner { height: auto; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
+  .top-nav { flex-wrap: wrap; gap: 8px; }
+  .top-badges { flex-wrap: wrap; gap: 6px; }
+  .badge-btn { font-size: 10px; padding: 4px 8px; }
+  .top-link { font-size: 11px; }
+  .top-right { gap: 8px; }
+
+  /* Bottom bar */
+  .bottom-bar { padding: 10px 12px; }
+  .bottom-bar-inner {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
   }
 
   .mobile-only  { display: flex !important; }
   .desktop-only { display: none !important; }
-
   .mobile-drawer  { display: block; }
   .drawer-overlay { display: block; }
 
-  .icon-hide-sm { display: none !important; }
+  /* Row 1: Logo | Icons (all 4) | Hamburger */
+  .logo { order: 1; flex-shrink: 0; }
+  .cat-wrap { order: 2; display: none !important; } /* hidden — inside drawer */
+  .header-icons { order: 3; margin-left: auto; gap: 4px; flex-shrink: 0; }
 
-  /* Hide top-bar on mobile to save space */
-  .top-bar { display: none !important; }
-
-  /* Logo */
-  .logo { order: 1; }
-  .cat-wrap { order: 2; }
-  .header-icons { order: 3; margin-left: auto; gap: 6px; }
-  
-  /* Mobile: Make search wrap full width on a new line */
-  .search-wrap { 
-    order: 4; 
-    flex: 0 0 100% !important; 
-    height: 48px;
+  /* Row 2: Search bar full width */
+  .search-wrap {
+    order: 4;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: 44px;
     display: flex !important;
-    margin-top: 8px;
+    margin-top: 4px;
   }
-  .search-icon-mobile { display: none !important; }
 
-  /* Icons sizing */
-  .icon-btn { width: 44px; height: 44px; }
+  /* All 4 icons visible, smaller */
+  .icon-btn { width: 38px; height: 38px; border-radius: 10px; }
+  .icon-hide-sm { display: flex !important; } /* show all icons */
 
   /* Logo smaller */
-  .logo-img { width: 80px; height: 26px; }
+  .logo-img { width: 90px; height: 28px; }
+  .logo-text { font-size: 14px; }
 }
 
 /* ============================================================
    BREAKPOINT: MOBILE — 480px
    ============================================================ */
 @media (max-width: 480px) {
-  .top-bar { padding: 4px 8px; }
-  .top-nav { flex-wrap: wrap; justify-content: center; width: 100%; }
-  .top-right { width: 100%; justify-content: center; }
-  .bottom-bar { padding: 8px 12px; }
+  .top-bar { padding: 3px 8px; }
+  .badge-btn { font-size: 9px; padding: 3px 6px; }
+  .top-badges { gap: 4px; }
+  .bottom-bar { padding: 8px 10px; }
   .search-input { padding: 0 8px; font-size: 13px; }
   .search-btn { padding: 0 10px; }
-  .icon-btn { width: 40px; height: 40px; font-size: 16px; border-radius: 10px; }
+  .icon-btn { width: 34px; height: 34px; font-size: 14px; border-radius: 8px; }
+  .header-icons { gap: 3px; }
 }
 
 /* ============================================================
