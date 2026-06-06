@@ -2702,16 +2702,18 @@ a { text-decoration: none; }
   .blog-carousel-wrap {
     width: 100%;
     overflow: hidden; /* no horizontal scroll */
+    padding: 0 12px;
+    box-sizing: border-box;
   }
 
   /* Grids stack vertically — 1 card per row */
   .products-grid, .reviews-grid, .blog-grid {
     flex-direction: column !important;
     width: 100% !important;
-    margin: 0 !important; /* Reset desktop negative margin */
-    gap: 24px;
-    padding: 24px 16px !important; /* Provide padding for shadows on mobile */
-    align-items: center;
+    margin: 0 !important;
+    gap: 16px;
+    padding: 12px 0 !important;
+    align-items: stretch;
     overflow: visible !important;
     scroll-snap-type: none;
   }
