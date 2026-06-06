@@ -625,8 +625,8 @@ a { text-decoration: none; }
    ============================================================ */
 @media (max-width: 768px) {
   /* Top bar — show but compact */
-  .top-bar { display: block; padding: 4px 12px; }
-  .top-bar-inner { height: auto; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
+  .top-bar { display: block; padding: 4px 12px; overflow: visible; }
+  .top-bar-inner { height: auto; flex-wrap: wrap; justify-content: space-between; gap: 6px; overflow: visible; }
   .top-nav { flex-wrap: wrap; gap: 8px; }
   .top-badges { flex-wrap: wrap; gap: 6px; }
   .badge-btn { font-size: 10px; padding: 4px 8px; }
@@ -2849,9 +2849,15 @@ a { text-decoration: none; }
 }
 
 .mobile-cat-full .cat-icon {
-  color: #7BC143;
+  color: #7BC143 !important;
   width: 18px;
   font-size: 14px;
+  flex-shrink: 0;
+}
+
+.mobile-cat-full .cat-item:hover .cat-icon,
+.mobile-cat-full .cat-item.active .cat-icon {
+  color: #7BC143 !important;
 }
 
 .mobile-cat-full .cat-arrow {
