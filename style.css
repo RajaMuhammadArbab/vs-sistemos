@@ -430,7 +430,7 @@ a { text-decoration: none; }
    MOBILE DRAWER
    ============================================================ */
 .mobile-drawer {
-  display: none;
+  display: block;
   position: fixed;
   top: 0; right: 0;
   width: 300px; max-width: 90vw;
@@ -441,19 +441,31 @@ a { text-decoration: none; }
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(.4,0,.2,1);
   overflow-y: auto;
+  visibility: hidden;
+  pointer-events: none;
 }
-.mobile-drawer.is-open { transform: translateX(0); }
+.mobile-drawer.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+}
 
 .drawer-overlay {
-  display: none;
+  display: block;
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.35);
   z-index: 1999;
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
+  visibility: hidden;
 }
-.drawer-overlay.is-open { opacity: 1; }
+.drawer-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
 
 .drawer-inner {
   display: flex;
@@ -598,8 +610,6 @@ a { text-decoration: none; }
 
   .mobile-only  { display: flex !important; }
   .desktop-only { display: none !important; }
-  .mobile-drawer  { display: block; }
-  .drawer-overlay { display: block; }
 
   /* Row 1: Logo | Icons (all 4) | Hamburger */
   .logo { order: 1; flex-shrink: 0; }
