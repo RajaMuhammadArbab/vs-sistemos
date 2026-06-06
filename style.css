@@ -7,7 +7,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  overflow-x: hidden;
+  /* Do NOT set overflow-x:hidden here — it breaks position:sticky */
 }
 
 body {
@@ -594,6 +594,9 @@ a { text-decoration: none; }
   .drawer-overlay { display: block; }
 
   .icon-hide-sm { display: none !important; }
+
+  /* Hide top-bar on mobile to save space */
+  .top-bar { display: none !important; }
 
   /* Logo */
   .logo { order: 1; }
