@@ -331,48 +331,38 @@ document.addEventListener('DOMContentLoaded', () => {
     let scrollLeft   = 0;
 
     /* Mouse drag (desktop) */
-    grid.addEventListener('mousedown', e => {
+    wrap.addEventListener('mousedown', e => {
       isDragging = true;
-      startX     = e.pageX - grid.offsetLeft;
-      scrollLeft = grid.scrollLeft;
-      grid.style.cursor = 'grabbing';
+      startX     = e.pageX - wrap.offsetLeft;
+      scrollLeft = wrap.scrollLeft;
+      wrap.style.cursor = 'grabbing';
     });
-    grid.addEventListener('mouseleave', () => { isDragging = false; grid.style.cursor = ''; });
-    grid.addEventListener('mouseup',    () => { isDragging = false; grid.style.cursor = ''; });
-    grid.addEventListener('mousemove', e => {
+    wrap.addEventListener('mouseleave', () => { isDragging = false; wrap.style.cursor = ''; });
+    wrap.addEventListener('mouseup',    () => { isDragging = false; wrap.style.cursor = ''; });
+    wrap.addEventListener('mousemove', e => {
       if (!isDragging) return;
       e.preventDefault();
-      const x    = e.pageX - grid.offsetLeft;
+      const x    = e.pageX - wrap.offsetLeft;
       const walk = (x - startX) * 1.5;
-      grid.scrollLeft = scrollLeft - walk;
+      wrap.scrollLeft = scrollLeft - walk;
     });
-
-    /* Touch swipe (mobile) */
-    let tStartX = 0;
-    grid.addEventListener('touchstart', e => {
-      tStartX    = e.touches[0].clientX;
-      scrollLeft = grid.scrollLeft;
-    }, { passive: true });
-    grid.addEventListener('touchmove', e => {
-      const diff = tStartX - e.touches[0].clientX;
-      grid.scrollLeft = scrollLeft + diff;
-    }, { passive: true });
 
     /* Arrow buttons scroll one card width */
     function scrollByCard(dir) {
       const card = grid.querySelector('[class*="-card"]');
       const cardW = card ? card.offsetWidth + 24 : 300;
-      grid.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+      wrap.scrollBy({ left: dir * cardW, behavior: 'smooth' });
     }
 
     prev?.addEventListener('click', () => scrollByCard(-1));
     next?.addEventListener('click', () => scrollByCard(1));
 
-    /* Make grid scrollable */
-    grid.style.overflowX  = 'auto';
-    grid.style.scrollBehavior = 'smooth';
-    grid.style.webkitOverflowScrolling = 'touch';
-    grid.style.cursor = 'grab';
+    /* Ensure wrapper is scrollable natively */
+    wrap.style.overflowX  = 'auto';
+    wrap.style.scrollBehavior = 'smooth';
+    wrap.style.webkitOverflowScrolling = 'touch';
+    wrap.style.scrollbarWidth = 'none';
+    wrap.style.cursor = 'grab';
   }
 
   /* Apply to all product/discount/reviews/blog/stats carousels */
