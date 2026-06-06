@@ -2674,58 +2674,59 @@ a { text-decoration: none; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 
-  /* ── Horizontal swipe carousels on mobile ── */
+  /* ── Carousels: horizontally swipeable on mobile ── */
   .products-carousel-wrap,
   .reviews-carousel-wrap,
   .blog-carousel-wrap {
     width: 100%;
     overflow-x: auto;
-    overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    padding-bottom: 8px;
   }
   .products-carousel-wrap::-webkit-scrollbar,
   .reviews-carousel-wrap::-webkit-scrollbar,
   .blog-carousel-wrap::-webkit-scrollbar { display: none; }
 
+  /* Grids stay horizontal — user swipes left/right */
   .products-grid, .reviews-grid, .blog-grid {
     flex-direction: row !important;
     width: max-content !important;
-    align-items: stretch;
     gap: 16px;
     padding: 4px 16px 8px 16px;
   }
 
-  .product-card  { width: 260px !important; height: auto !important; flex-shrink: 0; }
-  .review-card   { width: 260px !important; height: auto !important; flex-shrink: 0; }
-  .blog-card     { width: 280px !important; height: auto !important; flex-shrink: 0; }
+  /* Card sizes on mobile */
+  .product-card { width: 240px !important; height: auto !important; flex-shrink: 0; }
+  .review-card  { width: 240px !important; height: auto !important; flex-shrink: 0; }
+  .blog-card    { width: 260px !important; height: auto !important; flex-shrink: 0; }
 
-  /* Hide desktop arrows, show dots */
+  /* Hide arrows on mobile (swipe instead) */
   .prod-arrow { display: none !important; }
 
-  /* Stats grid — stack on mobile */
-  .stats-grid { flex-direction: column; width: 100%; gap: 16px; }
+  /* Stats — stack vertically */
+  .stats-grid { flex-direction: column !important; width: 100% !important; gap: 16px; }
   .stats-card { width: 100% !important; max-width: 100% !important; }
 
-  /* Best-cat grid — 2 columns on mobile */
+  /* Best-cat — 2 columns */
   .best-cat-grid { grid-template-columns: repeat(2, 1fr) !important; width: 100%; }
   .best-cat-card { width: 100% !important; }
 
-  /* Inner containers */
+  /* Inner containers — allow visible overflow for the carousel-wrap to handle scroll */
   .products-inner, .reviews-inner, .blog-inner {
     overflow: visible !important;
-    padding: 16px 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  /* Reduce excessive whitespace on mobile */
-  .products-section, .discount-section, .reviews-section, .blog-section, .stats-section, .newsletter-section {
+  /* Reduce section spacing on mobile */
+  .products-section, .discount-section, .reviews-section,
+  .blog-section, .stats-section, .newsletter-section {
     padding-bottom: 32px !important;
   }
   .best-cat-section, .partners-section, .montavimo-section {
     padding: 32px 0 !important;
   }
-  .products-inner, .reviews-inner, .blog-inner, .stats-inner, .best-cat-inner {
+  .stats-inner, .best-cat-inner {
     padding: 16px 16px !important;
   }
 }
