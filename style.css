@@ -2681,8 +2681,8 @@ a { text-decoration: none; }
   .footer-top { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
-  /* No sticky header on mobile to save screen space */
-  .header { position: static; box-shadow: none; }
+  /* No sticky header on mobile to save screen space, but must be relative for z-index */
+  .header { position: relative; z-index: 9999; box-shadow: none; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 
@@ -2694,24 +2694,24 @@ a { text-decoration: none; }
     overflow: hidden; /* no horizontal scroll */
   }
 
-  /* Horizontal swipe for grids on mobile (1 card per view) */
+  /* Grids stack vertically — 1 card per row */
   .products-grid, .reviews-grid, .blog-grid {
-    flex-direction: row !important;
-    width: calc(100% + 32px) !important;
-    margin: -16px !important;
-    gap: 16px;
-    padding: 16px !important;
-    align-items: stretch;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin: 0 !important; /* Reset desktop negative margin */
+    gap: 24px;
+    padding: 24px 16px !important; /* Provide padding for shadows on mobile */
+    align-items: center;
+    overflow: visible !important;
+    scroll-snap-type: none;
   }
 
-  /* Card sizes on mobile - 1 card per view */
+  /* Card sizes on mobile - full width */
   .product-card, .review-card, .blog-card {
-    width: 85vw !important;
-    max-width: 300px !important;
+    width: 100% !important;
+    max-width: 380px !important;
     height: auto !important;
-    scroll-snap-align: center;
+    scroll-snap-align: none;
     flex-shrink: 0;
   }
 

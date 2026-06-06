@@ -27,6 +27,16 @@ document.addEventListener('DOMContentLoaded', () => {
   hamburgerBtn?.addEventListener('click', () =>
     mobileDrawer?.classList.contains('is-open') ? closeDrawer() : openDrawer()
   );
+
+  const headerSearchIcon = document.querySelector('.search-icon-mobile');
+  headerSearchIcon?.addEventListener('click', (e) => {
+    e.preventDefault();
+    openDrawer();
+    setTimeout(() => {
+      document.getElementById('mobileSearchInput')?.focus();
+    }, 300);
+  });
+
   drawerOverlay?.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeCatFinal(); closeDropdown(); } });
   window.addEventListener('resize', () => { if (window.innerWidth > 768) closeDrawer(); });
