@@ -49,6 +49,26 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileCat.id = 'mobileCatDropdown';
     mobileCat.className = 'mobile-cat-full';
     drawerInner.appendChild(mobileCat);
+
+    // Setup tap functionality for mobile drawer categories
+    const mobCatItems = mobileCat.querySelectorAll('.cat-item');
+    const mobCatSubLists = mobileCat.querySelectorAll('.cat-sub-list');
+    
+    mobCatItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active class from all items and sublists
+        mobCatItems.forEach(i => i.classList.remove('active'));
+        mobCatSubLists.forEach(s => s.classList.remove('active'));
+        
+        // Add active to clicked item
+        item.classList.add('active');
+        
+        // Find and show the matching sublist
+        const cat = item.dataset.cat;
+        const targetSub = mobileCat.querySelector(`.cat-sub-list[data-sub="${cat}"]`);
+        if (targetSub) targetSub.classList.add('active');
+      });
+    });
   }
 
   /* Close button inside drawer */

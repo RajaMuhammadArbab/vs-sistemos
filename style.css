@@ -2882,7 +2882,7 @@ a { text-decoration: none; }
   margin: 0;
 }
 
-.mobile-cat-full .cat-sub-list.is-active {
+.mobile-cat-full .cat-sub-list.active {
   display: block;
 }
 
