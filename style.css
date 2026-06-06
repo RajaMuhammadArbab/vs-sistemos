@@ -2675,31 +2675,30 @@ a { text-decoration: none; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 
-  /* ── Carousels: horizontally swipeable on mobile ── */
+  /* ── Stack cards vertically on mobile (No horizontal swipe) ── */
   .products-carousel-wrap,
   .reviews-carousel-wrap,
   .blog-carousel-wrap {
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    overflow: hidden; /* no horizontal scroll */
   }
-  .products-carousel-wrap::-webkit-scrollbar,
-  .reviews-carousel-wrap::-webkit-scrollbar,
-  .blog-carousel-wrap::-webkit-scrollbar { display: none; }
 
-  /* Grids stay horizontal — user swipes left/right */
+  /* Grids stack vertically — 1 card per row */
   .products-grid, .reviews-grid, .blog-grid {
-    flex-direction: row !important;
-    width: max-content !important;
-    gap: 16px;
-    padding: 4px 16px 8px 16px;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 24px;
+    padding: 0;
+    align-items: center;
   }
 
-  /* Card sizes on mobile */
-  .product-card { width: 260px !important; height: auto !important; flex-shrink: 0; overflow: hidden; }
-  .review-card  { width: 260px !important; height: auto !important; flex-shrink: 0; overflow: hidden; }
-  .blog-card    { width: 280px !important; height: auto !important; flex-shrink: 0; overflow: hidden; }
+  /* Card sizes on mobile - full width */
+  .product-card, .review-card, .blog-card {
+    width: 100% !important;
+    max-width: 380px !important;
+    height: auto !important;
+    overflow: hidden;
+  }
 
   /* Hide arrows on mobile (swipe instead) */
   .prod-arrow { display: none !important; }
