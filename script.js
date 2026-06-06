@@ -41,22 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeCatFinal(); closeDropdown(); } });
   window.addEventListener('resize', () => { if (window.innerWidth > 768) closeDrawer(); });
 
-  /* Clone categories for mobile drawer */
-  const drawerCatBtn = document.querySelector('.drawer-cat-btn');
+  /* Clone categories directly into mobile drawer */
   const catList = document.getElementById('catList');
-  if (drawerCatBtn && catList) {
+  const drawerInner = document.querySelector('.drawer-inner');
+  if (catList && drawerInner) {
     const mobileCatList = catList.cloneNode(true);
     mobileCatList.id = 'mobileCatList';
     mobileCatList.className = 'mobile-cat-list';
-    mobileCatList.style.display = 'none';
-    drawerCatBtn.after(mobileCatList);
-
-    drawerCatBtn.addEventListener('click', () => {
-      const isHidden = mobileCatList.style.display === 'none';
-      mobileCatList.style.display = isHidden ? 'block' : 'none';
-      drawerCatBtn.classList.toggle('active', isHidden);
-    });
+    drawerInner.appendChild(mobileCatList);
   }
+
+  /* Close button inside drawer */
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+  drawerCloseBtn?.addEventListener('click', closeDrawer);
 
   /* ══════════════════════════════════════════════════
      PVM TOGGLE

@@ -395,38 +395,14 @@
       </div>
     </div>
 
-    <!-- MOBILE DRAWER -->
+    <!-- MOBILE DRAWER — categories only -->
     <div class="mobile-drawer" id="mobileDrawer">
       <div class="drawer-inner">
-        <div class="drawer-search">
-          <input type="text" class="drawer-search-input" placeholder="Ieškoti produktų..." id="mobileSearchInput" />
-          <button class="drawer-search-btn" id="mobileSearchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="drawer-header-row">
+          <span class="drawer-title"><i class="fa-solid fa-bars"></i> KATEGORIJOS</span>
+          <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Uždaryti"><i class="fa-solid fa-xmark"></i></button>
         </div>
-        <button class="drawer-cat-btn"><i class="fa-solid fa-bars"></i> KATEGORIJOS</button>
-        <div class="drawer-badges">
-          <a href="#" class="badge-btn"><i class="fa-solid fa-wrench"></i> MONTAVIMAS</a>
-          <a href="#" class="badge-btn"><i class="fa-solid fa-percent"></i> NUOLAIDOS</a>
-          <a href="#" class="badge-btn"><i class="fa-regular fa-envelope"></i> DOVANŲ KUPONAI</a>
-          <a href="#" class="badge-btn badge-outline">TAPKITE MŪSŲ VERSLO KLIENTU</a>
-        </div>
-        <nav class="drawer-nav">
-          <a href="#" class="drawer-link"><i class="fa-solid fa-phone-volume"></i> KONTAKTAI</a>
-          <a href="#" class="drawer-link">DUK</a>
-          <a href="#" class="drawer-link">BLOG'AS</a>
-        </nav>
-        <div class="drawer-bottom">
-          <div class="drawer-pvm">
-            <span class="pvm-label">pvm</span>
-            <label class="toggle-switch">
-              <input type="checkbox" id="pvmToggleMobile" />
-              <span class="toggle-track"></span>
-            </label>
-          </div>
-          <a href="#" class="lang-btn">
-            <img src="https://flagcdn.com/w20/gb.png" alt="EN" class="flag-img" />
-            ANGLŲ <i class="fa-solid fa-chevron-down tiny"></i>
-          </a>
-        </div>
+        <!-- Category list will be cloned here by JS -->
       </div>
     </div>
     <div class="drawer-overlay" id="drawerOverlay"></div>
