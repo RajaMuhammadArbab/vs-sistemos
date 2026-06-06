@@ -1738,8 +1738,8 @@ a { text-decoration: none; }
   transition: color 0.2s;
 }
 .prod-arrow:hover { color: #1B1B1B; }
-.prod-prev { left: -40px; }
-.prod-next { right: -40px; }
+.prod-prev { left: 4px; }
+.prod-next { right: 4px; }
 
 /* Grid */
 .products-grid {
