@@ -2712,10 +2712,11 @@ a { text-decoration: none; }
   /* Card sizes on mobile - full width */
   .product-card, .review-card, .blog-card {
     width: 100% !important;
-    max-width: 380px !important;
+    max-width: 100% !important;
     height: auto !important;
     scroll-snap-align: none;
     flex-shrink: 0;
+    box-sizing: border-box !important;
   }
 
   /* Hide arrows on mobile (swipe instead) */
