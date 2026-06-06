@@ -41,14 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeDrawer(); closeCatFinal(); closeDropdown(); } });
   window.addEventListener('resize', () => { if (window.innerWidth > 768) closeDrawer(); });
 
-  /* Clone categories directly into mobile drawer */
-  const catList = document.getElementById('catList');
+  /* Clone FULL categories dropdown (left + right columns) into mobile drawer */
+  const catDropdownFull = document.getElementById('catDropdown');
   const drawerInner = document.querySelector('.drawer-inner');
-  if (catList && drawerInner) {
-    const mobileCatList = catList.cloneNode(true);
-    mobileCatList.id = 'mobileCatList';
-    mobileCatList.className = 'mobile-cat-list';
-    drawerInner.appendChild(mobileCatList);
+  if (catDropdownFull && drawerInner) {
+    const mobileCat = catDropdownFull.cloneNode(true);
+    mobileCat.id = 'mobileCatDropdown';
+    mobileCat.className = 'mobile-cat-full';
+    drawerInner.appendChild(mobileCat);
   }
 
   /* Close button inside drawer */
