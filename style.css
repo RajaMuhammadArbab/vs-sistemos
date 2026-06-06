@@ -2739,7 +2739,11 @@ a { text-decoration: none; }
   /* Reduce section spacing on mobile */
   .products-section, .discount-section, .reviews-section,
   .blog-section, .stats-section, .newsletter-section {
-    padding-bottom: 32px !important;
+    padding-bottom: 16px !important;
+  }
+  .products-inner, .reviews-inner, .blog-inner {
+    padding-top: 16px !important;
+    padding-bottom: 0 !important;
   }
   .best-cat-section, .partners-section, .montavimo-section {
     padding: 32px 0 !important;
