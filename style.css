@@ -603,17 +603,20 @@ a { text-decoration: none; }
 
   /* Row 1: Logo | Icons (all 4) | Hamburger */
   .logo { order: 1; flex-shrink: 0; }
-  .cat-wrap { order: 2; display: none !important; } /* hidden — inside drawer */
-  .header-icons { order: 3; margin-left: auto; gap: 4px; flex-shrink: 0; }
+  .header-icons { order: 2; margin-left: auto; gap: 4px; flex-shrink: 0; }
 
-  /* Row 2: Search bar full width */
+  /* Row 2: Categories full width */
+  .cat-wrap { order: 3; display: block !important; flex: 0 0 100% !important; margin-top: 12px; }
+  .cat-btn { width: 100%; justify-content: center; border-radius: 12px; }
+
+  /* Row 3: Search bar full width */
   .search-wrap {
     order: 4;
     flex: 0 0 100% !important;
     width: 100% !important;
     height: 44px;
     display: flex !important;
-    margin-top: 4px;
+    margin-top: 8px;
   }
 
   /* All 4 icons visible, smaller */

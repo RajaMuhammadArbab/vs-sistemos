@@ -127,8 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
     closeDropdown();
     inputEl.value = ''; // clear after search
   }
-  searchBtn?.addEventListener('click', () => doSearch(searchInput));
-  searchInput?.addEventListener('keydown', e => { if (e.key === 'Enter') doSearch(searchInput); });
+  searchBtn?.addEventListener('click', (e) => { e.preventDefault(); doSearch(searchInput); });
+  searchInput?.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); doSearch(searchInput); } });
 
   const mobileSearchBtn = document.getElementById('mobileSearchBtn');
   const mobileSearchInput = document.getElementById('mobileSearchInput');
@@ -168,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactWrap.addEventListener('mouseenter', () => contactDropdown.classList.add('is-open'));
     contactWrap.addEventListener('mouseleave', () => contactDropdown.classList.remove('is-open'));
     contactWrap.addEventListener('click', e => {
+      e.preventDefault();
       e.stopPropagation();
       contactDropdown.classList.toggle('is-open');
     });
@@ -186,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartWrap.addEventListener('mouseenter', () => cartDropdown.classList.add('is-open'));
     cartWrap.addEventListener('mouseleave', () => cartDropdown.classList.remove('is-open'));
     cartWrap.addEventListener('click', e => {
+      e.preventDefault();
       e.stopPropagation();
       cartDropdown.classList.toggle('is-open');
     });
