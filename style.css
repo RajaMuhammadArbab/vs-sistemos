@@ -1791,11 +1791,12 @@ a { text-decoration: none; }
 .products-grid {
   display: flex;
   gap: 24px;
-  width: 100%;
+  width: calc(100% + 40px);
+  margin: -20px;
+  padding: 20px;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  padding: 10px 0; /* Add padding for box shadows */
 }
 .products-grid::-webkit-scrollbar { display: none; }
 
@@ -2009,11 +2010,12 @@ a { text-decoration: none; }
 .reviews-grid {
   display: flex;
   gap: 24px;
-  width: 100%;
+  width: calc(100% + 40px);
+  margin: -20px;
+  padding: 20px;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  padding: 10px 0;
 }
 .reviews-grid::-webkit-scrollbar { display: none; }
 
@@ -2192,11 +2194,12 @@ a { text-decoration: none; }
 .blog-grid {
   display: flex;
   gap: 24px;
-  width: 100%;
+  width: calc(100% + 40px);
+  margin: -20px;
+  padding: 20px;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
-  padding: 10px 0;
 }
 .blog-grid::-webkit-scrollbar { display: none; }
 
