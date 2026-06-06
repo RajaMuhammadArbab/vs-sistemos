@@ -779,7 +779,8 @@ a { text-decoration: none; }
     overflow: hidden;
   }
   .slider-inner-wrap { position: relative; display: block; width: 100%; }
-  .hero-slider { height: auto; aspect-ratio: 2.4 / 1; border-radius: 10px; width: 100%; }
+  .hero-slider { height: auto; aspect-ratio: unset; }
+  .slide-img { object-fit: contain; height: auto; background: var(--background-background, #F9F6F5); }
   .slider-arrow { 
     position: absolute; top: 50%; transform: translateY(-50%); 
     z-index: 10; background: rgba(255,255,255,0.7); border-radius: 50%;
@@ -793,13 +794,12 @@ a { text-decoration: none; }
   .slider-arrow { width: 28px; height: 28px; font-size: 11px; }
   .slider-prev { left: 4px; }
   .slider-next { right: 4px; }
-  .hero-slider { border-radius: 8px; aspect-ratio: 2 / 1; }
+  .hero-slider { border-radius: 8px; }
   .dot { width: 16px; height: 3px; }
   .dot.active { width: 22px; }
 }
 @media (max-width: 360px) {
   .slider-wrapper { padding: 0 6px; }
-  .hero-slider { aspect-ratio: 1.8 / 1; }
 }
 
 /* ============================================================
@@ -2694,23 +2694,25 @@ a { text-decoration: none; }
     overflow: hidden; /* no horizontal scroll */
   }
 
-  /* Grids stack vertically — 1 card per row */
+  /* Horizontal swipe for grids on mobile (1 card per view) */
   .products-grid, .reviews-grid, .blog-grid {
-    flex-direction: column !important;
-    width: 100% !important;
-    margin: 0 !important; /* Reset desktop negative margin */
-    gap: 24px;
-    padding: 24px 16px !important; /* Provide padding for shadows on mobile */
-    align-items: center;
-    overflow: visible !important;
+    flex-direction: row !important;
+    width: calc(100% + 32px) !important;
+    margin: -16px !important;
+    gap: 16px;
+    padding: 16px !important;
+    align-items: stretch;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
   }
 
-  /* Card sizes on mobile - full width */
+  /* Card sizes on mobile - 1 card per view */
   .product-card, .review-card, .blog-card {
-    width: 100% !important;
-    max-width: 380px !important;
+    width: 85vw !important;
+    max-width: 300px !important;
     height: auto !important;
-    overflow: hidden;
+    scroll-snap-align: center;
+    flex-shrink: 0;
   }
 
   /* Hide arrows on mobile (swipe instead) */
