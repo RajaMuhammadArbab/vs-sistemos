@@ -2732,8 +2732,8 @@ a { text-decoration: none; }
   /* Inner containers — allow visible overflow for the carousel-wrap to handle scroll */
   .products-inner, .reviews-inner, .blog-inner {
     overflow: visible !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   /* Reduce section spacing on mobile */
