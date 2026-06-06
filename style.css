@@ -2670,7 +2670,8 @@ a { text-decoration: none; }
   .footer-top { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 768px) {
-  .header { position: sticky; top: 0; z-index: 999; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  /* No sticky header on mobile to save screen space */
+  .header { position: static; box-shadow: none; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
 
@@ -2696,9 +2697,9 @@ a { text-decoration: none; }
   }
 
   /* Card sizes on mobile */
-  .product-card { width: 240px !important; height: auto !important; flex-shrink: 0; }
-  .review-card  { width: 240px !important; height: auto !important; flex-shrink: 0; }
-  .blog-card    { width: 260px !important; height: auto !important; flex-shrink: 0; }
+  .product-card { width: 260px !important; height: auto !important; flex-shrink: 0; overflow: hidden; }
+  .review-card  { width: 260px !important; height: auto !important; flex-shrink: 0; overflow: hidden; }
+  .blog-card    { width: 280px !important; height: auto !important; flex-shrink: 0; overflow: hidden; }
 
   /* Hide arrows on mobile (swipe instead) */
   .prod-arrow { display: none !important; }
@@ -2707,9 +2708,9 @@ a { text-decoration: none; }
   .stats-grid { flex-direction: column !important; width: 100% !important; gap: 16px; }
   .stats-card { width: 100% !important; max-width: 100% !important; }
 
-  /* Best-cat — 2 columns */
-  .best-cat-grid { grid-template-columns: repeat(2, 1fr) !important; width: 100%; }
-  .best-cat-card { width: 100% !important; }
+  /* Best-cat — 1 column on mobile to prevent text overlapping images */
+  .best-cat-grid { grid-template-columns: 1fr !important; width: 100%; gap: 16px; }
+  .best-cat-card { width: 100% !important; min-height: 180px; }
 
   /* Inner containers — allow visible overflow for the carousel-wrap to handle scroll */
   .products-inner, .reviews-inner, .blog-inner {
