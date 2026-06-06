@@ -337,38 +337,37 @@ document.addEventListener('DOMContentLoaded', () => {
     let scrollLeft   = 0;
 
     /* Mouse drag (desktop) */
-    wrap.addEventListener('mousedown', e => {
+    grid.addEventListener('mousedown', e => {
       isDragging = true;
-      startX     = e.pageX - wrap.offsetLeft;
-      scrollLeft = wrap.scrollLeft;
-      wrap.style.cursor = 'grabbing';
+      startX     = e.pageX - grid.offsetLeft;
+      scrollLeft = grid.scrollLeft;
+      grid.style.cursor = 'grabbing';
     });
-    wrap.addEventListener('mouseleave', () => { isDragging = false; wrap.style.cursor = ''; });
-    wrap.addEventListener('mouseup',    () => { isDragging = false; wrap.style.cursor = ''; });
-    wrap.addEventListener('mousemove', e => {
+    grid.addEventListener('mouseleave', () => { isDragging = false; grid.style.cursor = ''; });
+    grid.addEventListener('mouseup',    () => { isDragging = false; grid.style.cursor = ''; });
+    grid.addEventListener('mousemove', e => {
       if (!isDragging) return;
       e.preventDefault();
-      const x    = e.pageX - wrap.offsetLeft;
+      const x    = e.pageX - grid.offsetLeft;
       const walk = (x - startX) * 1.5;
-      wrap.scrollLeft = scrollLeft - walk;
+      grid.scrollLeft = scrollLeft - walk;
     });
 
     /* Arrow buttons scroll one card width */
     function scrollByCard(dir) {
       const card = grid.querySelector('[class*="-card"]');
       const cardW = card ? card.offsetWidth + 24 : 300;
-      wrap.scrollBy({ left: dir * cardW, behavior: 'smooth' });
+      grid.scrollBy({ left: dir * cardW, behavior: 'smooth' });
     }
 
     prev?.addEventListener('click', () => scrollByCard(-1));
     next?.addEventListener('click', () => scrollByCard(1));
 
-    /* Ensure wrapper is scrollable natively */
-    wrap.style.overflowX  = 'auto';
-    wrap.style.scrollBehavior = 'smooth';
-    wrap.style.webkitOverflowScrolling = 'touch';
-    wrap.style.scrollbarWidth = 'none';
-    wrap.style.cursor = 'grab';
+    /* Ensure grid is scrollable natively */
+    grid.style.overflowX  = 'auto';
+    grid.style.scrollBehavior = 'smooth';
+    grid.style.scrollbarWidth = 'none';
+    grid.style.cursor = 'grab';
   }
 
   /* Apply to all product/discount/reviews/blog/stats carousels */
