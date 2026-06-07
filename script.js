@@ -54,6 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobCatItems = mobileCat.querySelectorAll('.cat-item');
     const mobCatSubLists = mobileCat.querySelectorAll('.cat-sub-list');
     
+    // Set initial active state for the first item
+    if (mobCatItems.length > 0) {
+      mobCatItems.forEach(i => i.classList.remove('active'));
+      mobCatSubLists.forEach(s => s.classList.remove('active'));
+      
+      mobCatItems[0].classList.add('active');
+      const firstCat = mobCatItems[0].dataset.cat;
+      const firstSub = mobileCat.querySelector(`.cat-sub-list[data-sub="${firstCat}"]`);
+      if (firstSub) firstSub.classList.add('active');
+    }
+    
     mobCatItems.forEach(item => {
       item.addEventListener('click', () => {
         // Remove active class from all items and sublists
@@ -185,6 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
     contactWrap.addEventListener('mouseenter', () => contactDropdown.classList.add('is-open'));
     contactWrap.addEventListener('mouseleave', () => contactDropdown.classList.remove('is-open'));
     contactWrap.addEventListener('click', e => {
+      // Allow clicks on links inside the dropdown to work
+      if (e.target.closest('.contact-dropdown')) return;
       e.preventDefault();
       e.stopPropagation();
       contactDropdown.classList.toggle('is-open');
@@ -204,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cartWrap.addEventListener('mouseenter', () => cartDropdown.classList.add('is-open'));
     cartWrap.addEventListener('mouseleave', () => cartDropdown.classList.remove('is-open'));
     cartWrap.addEventListener('click', e => {
+      if (e.target.closest('.cart-dropdown')) return;
       e.preventDefault();
       e.stopPropagation();
       cartDropdown.classList.toggle('is-open');
@@ -219,8 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const catBtn      = document.getElementById('catBtn');
   const catDropdown = document.getElementById('catDropdown');
   const catWrap     = document.getElementById('catWrap');
-  const catItems    = document.querySelectorAll('.cat-item');
-  const catSubLists = document.querySelectorAll('.cat-sub-list');
+  const catItems    = catDropdown ? catDropdown.querySelectorAll('.cat-item') : [];
+  const catSubLists = catDropdown ? catDropdown.querySelectorAll('.cat-sub-list') : [];
 
   function positionCatDropdown() {
     if (!catBtn || !catDropdown) return;
@@ -267,7 +281,8 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.add('active');
       const cat = item.dataset.cat;
       catSubLists.forEach(s => s.classList.remove('active'));
-      document.querySelector(`.cat-sub-list[data-sub="${cat}"]`)?.classList.add('active');
+      const targetSub = catDropdown ? catDropdown.querySelector(`.cat-sub-list[data-sub="${cat}"]`) : null;
+      if (targetSub) targetSub.classList.add('active');
     });
     // also support tap on mobile
     item.addEventListener('click', () => {
@@ -275,7 +290,8 @@ document.addEventListener('DOMContentLoaded', () => {
       item.classList.add('active');
       const cat = item.dataset.cat;
       catSubLists.forEach(s => s.classList.remove('active'));
-      document.querySelector(`.cat-sub-list[data-sub="${cat}"]`)?.classList.add('active');
+      const targetSub = catDropdown ? catDropdown.querySelector(`.cat-sub-list[data-sub="${cat}"]`) : null;
+      if (targetSub) targetSub.classList.add('active');
     });
   });
 
