@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US sistemos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <header class="header">
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <nav class="top-nav">
+          <div class="contact-dropdown-wrap" id="contactDropdownWrap">
+            <a href="#" class="top-link" id="contactLink"><i class="fa-solid fa-phone-volume"></i> KONTAKTAI <i class="fa-solid fa-chevron-down tiny"></i></a>
+            <div class="contact-dropdown" id="contactDropdown">
+              <a href="tel:+37067464686" class="contact-item">
+                <i class="fa-solid fa-phone-volume contact-icon"></i>
+                <span>+370 674 64686</span>
+              </a>
+              <a href="tel:+37060200363" class="contact-item">
+                <i class="fa-solid fa-phone-volume contact-icon"></i>
+                <span>+370 602 00363</span>
+              </a>
+              <a href="mailto:vilnius@vssistemos.lt" class="contact-item">
+                <i class="fa-regular fa-envelope contact-icon"></i>
+                <span>vilnius@vssistemos.lt</span>
+              </a>
+              <a href="mailto:info@vssistemos.lt" class="contact-item">
+                <i class="fa-regular fa-envelope contact-icon"></i>
+                <span>info@vssistemos.lt</span>
+              </a>
+              <a href="#" class="contact-item">
+                <i class="fa-solid fa-mobile-screen contact-icon"></i>
+                <span>Contacts Us</span>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="top-link">DUK</a>
+          <a href="#" class="top-link">BLOG'AS</a>
+        </nav>
+        <div class="top-badges">
+          <a href="#" class="badge-btn"><i class="fa-solid fa-wrench"></i> MONTAVIMAS</a>
+          <a href="#" class="badge-btn"><i class="fa-solid fa-percent"></i> NUOLAIDOS</a>
+          <a href="#" class="badge-btn"><i class="fa-regular fa-envelope"></i> DOVANŲ KUPONAI</a>
+          <a href="#" class="badge-btn badge-outline">TAPKITE MŪSŲ VERSLO KLIENTU</a>
+        </div>
+        <div class="top-right">
+          <span class="pvm-label">pvm</span>
+          <label class="toggle-switch">
+            <input type="checkbox" id="pvmToggle" />
+            <span class="toggle-track"></span>
+          </label>
+          <a href="#" class="lang-btn">
+            <img src="https://flagcdn.com/w20/gb.png" alt="EN flag" class="flag-img" />
+            ANGLŲ <i class="fa-solid fa-chevron-down tiny"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="bottom-bar">
+      <div class="bottom-bar-inner">
+        <a href="#" class="logo">
+          <img src="assets/images/logo.png" alt="VS Sistemos" class="logo-img" />
+        </a>
+        <!-- KATEGORIJOS with mega dropdown -->
+        <div class="cat-wrap" id="catWrap">
+          <button class="categories-btn desktop-only" id="catBtn">
+            <i class="fa-solid fa-bars"></i>
+            <span>KATEGORIJOS</span>
+          </button>
+
+          <div class="cat-dropdown" id="catDropdown">
+            <!-- Left column: main categories -->
+            <ul class="cat-list" id="catList">
+              <li class="cat-item active" data-cat="dovanu">
+                <i class="fa-solid fa-gift cat-icon"></i>
+                <span>Dovanų idėjos</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="vaizdo">
+                <i class="fa-solid fa-video cat-icon"></i>
+                <span>Vaizdo stebėjimas</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="apsaugos">
+                <i class="fa-solid fa-shield cat-icon"></i>
+                <span>Apsaugos sistemos</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="gaisrine">
+                <i class="fa-solid fa-bell cat-icon"></i>
+                <span>Gaisrinė įranga</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="domofonai">
+                <i class="fa-solid fa-mobile cat-icon"></i>
+                <span>Domofonai</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="prieigos">
+                <i class="fa-solid fa-key cat-icon"></i>
+                <span>Prieigos kontrolė</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="termo">
+                <i class="fa-solid fa-camera cat-icon"></i>
+                <span>Pramoninės termovizinės kameros</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="medziokle">
+                <i class="fa-solid fa-crosshairs cat-icon"></i>
+                <span>Medžioklė</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="tinklo">
+                <i class="fa-solid fa-network-wired cat-icon"></i>
+                <span>Tinklo įranga</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="laisvalaikio">
+                <i class="fa-solid fa-futbol cat-icon"></i>
+                <span>Laisvalaikio prekės</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="ismanieji">
+                <i class="fa-solid fa-house cat-icon"></i>
+                <span>Išmanieji namai</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="darbo">
+                <i class="fa-solid fa-user-clock cat-icon"></i>
+                <span>Darbo laiko apskaita</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="auto">
+                <i class="fa-solid fa-car cat-icon"></i>
+                <span>Automobiliams</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="lankytojai">
+                <i class="fa-solid fa-users cat-icon"></i>
+                <span>Lankytojų skaičiavimo sistema</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="instaliacines">
+                <i class="fa-solid fa-toolbox cat-icon"></i>
+                <span>Instalacinės medžiagos</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="seifai">
+                <i class="fa-solid fa-lock cat-icon"></i>
+                <span>Seifai</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+              <li class="cat-item" data-cat="komutacines">
+                <i class="fa-solid fa-server cat-icon"></i>
+                <span>Komutacinės spintos</span>
+                <i class="fa-solid fa-chevron-right cat-arrow"></i>
+              </li>
+            </ul>
+
+            <!-- Right column: subcategories -->
+            <div class="cat-sub" id="catSub">
+              <ul class="cat-sub-list active" data-sub="dovanu">
+                <li class="cat-sub-item"><span>Dovanų kuponai</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>Dovanų rinkiniai</span></li>
+                <li class="cat-sub-item"><span>Išmaniosios dovanos</span></li>
+                <li class="cat-sub-item"><span>Praktiškos dovanos</span></li>
+                <li class="cat-sub-item"><span>Verslo dovanos</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="vaizdo">
+                <li class="cat-sub-item"><span>Analoginė vaizdo apsauga</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>Laikikliai</span></li>
+                <li class="cat-sub-item"><span>Kameros su SIM kortele</span></li>
+                <li class="cat-sub-item"><span>Veidų atpažinimas</span></li>
+                <li class="cat-sub-item"><span>Namų vaizdo kameros</span></li>
+                <li class="cat-sub-item"><span>IP vaizdo stebėjimas</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>IR prožektoriai</span></li>
+                <li class="cat-sub-item"><span>Rinkiniai</span></li>
+                <li class="cat-sub-item"><span>Valstybinių numerių nuskaitymo kameros</span></li>
+                <li class="cat-sub-item"><span>Lauko stebėjimo kameros</span></li>
+                <li class="cat-sub-item"><span>Reolink kameros</span></li>
+                <li class="cat-sub-item"><span>Termovizinė kamera</span></li>
+                <li class="cat-sub-item"><span>Vaizdo stebėjimo kameros</span></li>
+                <li class="cat-sub-item"><span>Vaizdo stebėjimo kameros su judesio jutikliu</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="apsaugos">
+                <li class="cat-sub-item"><span>Signalizacijos sistemos</span></li>
+                <li class="cat-sub-item"><span>Jutikliai</span></li>
+                <li class="cat-sub-item"><span>Sirenos</span></li>
+                <li class="cat-sub-item"><span>Valdymo pulteliai</span></li>
+                <li class="cat-sub-item"><span>Belaidės signalizacijos</span></li>
+                <li class="cat-sub-item"><span>Sirenos lauko</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="gaisrine">
+                <li class="cat-sub-item"><span>Dūmų detektoriai</span></li>
+                <li class="cat-sub-item"><span>Gaisro signalizacija</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>Gesintuvai</span></li>
+                <li class="cat-sub-item"><span>CO detektoriai</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="domofonai">
+                <li class="cat-sub-item"><span>Video domofonai</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>Audio domofonai</span></li>
+                <li class="cat-sub-item"><span>IP domofonai</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>Belaidžiai domofonai</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="prieigos">
+                <li class="cat-sub-item"><span>Durų spynos</span></li>
+                <li class="cat-sub-item"><span>Kortelių skaitytuvai</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>Pirštų atspaudų skaitytuvai</span></li>
+                <li class="cat-sub-item"><span>Kodo spynos</span></li>
+                <li class="cat-sub-item"><span>Turniketai</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="ismanieji">
+                <li class="cat-sub-item"><span>Išmanieji jungikliai</span></li>
+                <li class="cat-sub-item"><span>Išmanioji apšvietimas</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>Automatizacija</span></li>
+                <li class="cat-sub-item"><span>Smart Hub</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="auto">
+                <li class="cat-sub-item"><span>Automobilio kameros</span><i class="fa-solid fa-chevron-right cat-sub-arrow"></i></li>
+                <li class="cat-sub-item"><span>GPS sekimas</span></li>
+                <li class="cat-sub-item"><span>Parkavimo sistemos</span></li>
+                <li class="cat-sub-item"><span>Automobilio signalizacijos</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="termo">
+                <li class="cat-sub-item"><span>Pramoninės kameros</span></li>
+                <li class="cat-sub-item"><span>Termoviziniai jutikliai</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="medziokle">
+                <li class="cat-sub-item"><span>Medžioklės kameros</span></li>
+                <li class="cat-sub-item"><span>Naktinio matymo prietaisai</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="tinklo">
+                <li class="cat-sub-item"><span>Maršrutizatoriai</span></li>
+                <li class="cat-sub-item"><span>Komutatoriai (Switch)</span></li>
+                <li class="cat-sub-item"><span>Wi-Fi įranga</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="laisvalaikio">
+                <li class="cat-sub-item"><span>Dronai</span></li>
+                <li class="cat-sub-item"><span>Sporto kameros</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="darbo">
+                <li class="cat-sub-item"><span>Biometriniai terminalai</span></li>
+                <li class="cat-sub-item"><span>Kortelių sistemos</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="lankytojai">
+                <li class="cat-sub-item"><span>3D skaičiuotuvai</span></li>
+                <li class="cat-sub-item"><span>Infraraudonųjų spindulių jutikliai</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="instaliacines">
+                <li class="cat-sub-item"><span>Kabeliai</span></li>
+                <li class="cat-sub-item"><span>Montavimo dėžutės</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="seifai">
+                <li class="cat-sub-item"><span>Sieniniai seifai</span></li>
+                <li class="cat-sub-item"><span>Baldiniai seifai</span></li>
+              </ul>
+              <ul class="cat-sub-list" data-sub="komutacines">
+                <li class="cat-sub-item"><span>19" Spintos</span></li>
+                <li class="cat-sub-item"><span>Priedai spintoms</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="search-wrap" id="searchWrap">
+          <input type="text" class="search-input" id="searchInput" placeholder="Ieškoti prekių..." autocomplete="off" />
+          <button class="search-btn" aria-label="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+
+          <!-- Search Dropdown -->
+          <div class="search-dropdown" id="searchDropdown">
+            <div class="search-dropdown-header">
+              <span class="search-history-title">Paieškos istorija</span>
+              <button class="search-clear-btn" id="searchClearAll">Išvalyti istoriją <span class="search-clear-x">×</span></button>
+            </div>
+            <ul class="search-history-list" id="searchHistoryList">
+              <li class="search-history-item" data-index="0">
+                <i class="fa-regular fa-clock search-history-icon"></i>
+                <span class="search-history-text">Yuka Mini 2</span>
+                <button class="search-remove-btn" data-index="0">×</button>
+              </li>
+              <li class="search-history-item" data-index="1">
+                <i class="fa-regular fa-clock search-history-icon"></i>
+                <span class="search-history-text">Yuka Mini 2</span>
+                <button class="search-remove-btn" data-index="1">×</button>
+              </li>
+              <li class="search-history-item" data-index="2">
+                <i class="fa-regular fa-clock search-history-icon"></i>
+                <span class="search-history-text">Yuka Mini 2</span>
+                <button class="search-remove-btn" data-index="2">×</button>
+              </li>
+              <li class="search-history-item" data-index="3">
+                <i class="fa-regular fa-clock search-history-icon"></i>
+                <span class="search-history-text">Yuka Mini 2</span>
+                <button class="search-remove-btn" data-index="3">×</button>
+              </li>
+              <li class="search-history-item" data-index="4">
+                <i class="fa-regular fa-clock search-history-icon"></i>
+                <span class="search-history-text">Yuka Mini 2</span>
+                <button class="search-remove-btn" data-index="4">×</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="header-icons">
+          <!-- Search icon — mobile only -->
+          <a href="#" class="icon-btn search-icon-mobile" title="Paieška" style="display:none">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </a>
+          <a href="#" class="icon-btn" title="Paskyra">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </a>
+          <a href="#" class="icon-btn icon-hide-sm" title="Mėgstami">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </a>
+          <a href="#" class="icon-btn icon-hide-sm" title="Palyginti">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9h16M4 9l4-4M4 9l4 4"/>
+              <path d="M20 15H4M20 15l-4-4M20 15l-4 4"/>
+            </svg>
+          </a>
+          <div class="cart-dropdown-wrap" id="cartDropdownWrap">
+            <a href="#" class="icon-btn cart-btn" title="Krepšelis" id="cartBtnLink">
+              <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+              </svg>
+              <span class="cart-badge">2</span>
+            </a>
+            <div class="cart-dropdown" id="cartDropdown">
+              <div class="cart-items">
+                <div class="cart-item">
+                  <div class="cart-item-img-wrap"><img src="assets/images/slide1.jpg" alt="Product" class="cart-item-img" /></div>
+                  <div class="cart-item-info">
+                    <div class="cart-item-title">Airseekers Tron SE robotas vejapjovė be...</div>
+                    <div class="cart-item-qty">2 vnt</div>
+                  </div>
+                  <div class="cart-item-price-box">
+                    <div class="cart-item-tax">Su PVM</div>
+                    <div class="cart-item-price">999.00€</div>
+                  </div>
+                </div>
+                <div class="cart-item">
+                  <div class="cart-item-img-wrap"><img src="assets/images/slide1.jpg" alt="Product" class="cart-item-img" /></div>
+                  <div class="cart-item-info">
+                    <div class="cart-item-title">Airseekers Tron SE robotas vejapjovė be...</div>
+                    <div class="cart-item-qty">2 vnt</div>
+                  </div>
+                  <div class="cart-item-price-box">
+                    <div class="cart-item-tax">Su PVM</div>
+                    <div class="cart-item-price">999.00€</div>
+                  </div>
+                </div>
+                <div class="cart-item">
+                  <div class="cart-item-img-wrap"><img src="assets/images/slide1.jpg" alt="Product" class="cart-item-img" /></div>
+                  <div class="cart-item-info">
+                    <div class="cart-item-title">Airseekers Tron SE robotas vejapjovė be...</div>
+                    <div class="cart-item-qty">2 vnt</div>
+                  </div>
+                  <div class="cart-item-price-box">
+                    <div class="cart-item-tax">Su PVM</div>
+                    <div class="cart-item-price">999.00€</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-total-box">
+                <span class="cart-total-label">Iš viso:</span>
+                <span class="cart-total-price">999.00€</span>
+              </div>
+              <div class="cart-buttons">
+                <a href="#" class="cart-btn-primary">Eiti į krepšelį <i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#" class="cart-btn-outline">Tęsti į patikrą <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <button class="hamburger mobile-only" id="hamburgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE DRAWER — categories only -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="drawer-inner">
+        <div class="drawer-header-row">
+          <span class="drawer-title"><i class="fa-solid fa-bars"></i> KATEGORIJOS</span>
+          <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Uždaryti"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <!-- Category list will be cloned here by JS -->
+      </div>
+    </div>
+    <div class="drawer-overlay" id="drawerOverlay"></div>
+  </header>
+  <main class="product-details-page" style="min-height: 50vh;"></main>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <!-- Col 1: Logo, Text, Socials -->
+        <div class="footer-col col-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="VS Sistemos" style="width: 154px; height: auto;" />
+          </div>
+          <p class="footer-desc">
+            Elevating security through high-precision engineering and next-generation surveillance technology.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-btn"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" class="social-btn"><i class="fa-solid fa-share-nodes"></i></a>
+            <a href="#" class="social-btn"><i class="fa-solid fa-info"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2 -->
+        <div class="footer-col">
+          <h4 class="footer-heading"><span class="dot"></span>Klientų aptarnavimas</h4>
+          <ul class="footer-links">
+            <li><a href="#">Kontaktai</a></li>
+            <li><a href="#">Gedimų šalinimas</a></li>
+            <li><a href="#">Svetainės žemėlapis</a></li>
+            <li><a href="#">Gamintojai</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 -->
+        <div class="footer-col">
+          <h4 class="footer-heading"><span class="dot"></span>Mano paskyra</h4>
+          <ul class="footer-links">
+            <li><a href="#">Mano paskyra</a></li>
+            <li><a href="#">Užsakymų istorija</a></li>
+            <li><a href="#">Naujienlaiškis</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 -->
+        <div class="footer-col">
+          <h4 class="footer-heading"><span class="dot"></span>Informacija klientams</h4>
+          <ul class="footer-links">
+            <li><a href="#">Apie mus</a></li>
+            <li><a href="#">Pristatymas</a></li>
+            <li><a href="#">Privatumo politika</a></li>
+            <li><a href="#">Taisyklės</a></li>
+            <li><a href="#">INBANK LIZINGAS</a></li>
+            <li><a href="#">D.U.K</a></li>
+            <li><a href="#">Blog'as</a></li>
+            <li><a href="#">Mūsų klientai</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5 -->
+        <div class="footer-col">
+          <h4 class="footer-heading"><span class="dot"></span>Teisinė informacija</h4>
+          <ul class="footer-links">
+            <li><a href="#">Taisyklės ir sąlygos</a></li>
+            <li><a href="#">Privatumo politika</a></li>
+            <li><a href="#">Pristatymas</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">COPYRIGHT 2020 VS SISTEMOS - ALL RIGHTS RESERVED</p>
+        <div class="payment-methods">
+          <span class="pay-icon" style="font-weight:900;">VISA</span>
+          <span class="pay-icon" style="display:flex; align-items:center; gap:4px;">
+            <span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:red;"></span>
+            <span style="display:inline-block; width:12px; height:12px; border-radius:50%; background:orange; margin-left:-6px;"></span>
+            mastercard
+          </span>
+          <span class="pay-icon" style="color: blue; font-weight: bold; font-size:16px;">P paysera</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
